@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
 
 import 'package:flutter/material.dart';
-import 'package:islamy/ui/hadet_details/hadeth_details.dart';
+import 'package:islamy/ui/hadeth_details/hadeth_details.dart';
 import 'package:islamy/ui/home/home_screen.dart';
 import 'package:islamy/ui/splash_screen/splash_screen.dart';
 import 'package:islamy/ui/sura_details/sura_details.dart';
