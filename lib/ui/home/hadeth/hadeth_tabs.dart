@@ -74,7 +74,6 @@ class _HadethScreenState extends State<HadethScreen> {
     String fileContent =
         await rootBundle.loadString('assets/files/ahadeth .txt');
     List<String> splittedContentHadeth = fileContent.split('#');
-    print(splittedContentHadeth.length);
     for (int i = 0; i < splittedContentHadeth.length; i++) {
       String singleHadethContent = splittedContentHadeth[i];
       List<String> lines = singleHadethContent.trim().split('\n');
@@ -84,7 +83,7 @@ class _HadethScreenState extends State<HadethScreen> {
       Hadeth hadeth = Hadeth(title, content);
       hadethList.add(hadeth);
     }
-    //await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 3));
     allHadethList = hadethList;
     setState(() {});
   }
