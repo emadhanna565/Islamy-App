@@ -127,7 +127,8 @@ class QuranScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(child: Image.asset('assets/images/quran_header_logo.png')),
+        Expanded(
+            flex: 1, child: Image.asset('assets/images/quran_header_logo.png')),
         Container(
           width: double.infinity,
           height: 2,
@@ -161,6 +162,7 @@ class QuranScreen extends StatelessWidget {
           margin: EdgeInsets.only(top: 8),
         ),
         Expanded(
+          flex: 3,
           child: ListView.separated(
             itemBuilder: (context, index) {
               return VerseName(title: names[index], index: index);
