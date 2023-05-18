@@ -35,16 +35,13 @@ class HadethDetailsScreen extends StatelessWidget {
             ),
             Expanded(
               child: Card(
-                margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: SingleChildScrollView(
-                    child: Text(
-                  arg.content,
-                  textAlign: TextAlign.center,
-                )),
-              ),
+                  margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Container(
+                    child: Text(arg.content),
+                  )),
             ),
           ],
         ),

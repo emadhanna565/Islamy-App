@@ -6,9 +6,7 @@ import 'package:islamy/ui/home/hadeth/hadeth.dart';
 
 class HadethTitleWidget extends StatelessWidget {
   Hadeth hadeth;
-
   HadethTitleWidget(this.hadeth);
-
   @override
   Widget build(BuildContext context) {
     return InkWell(
@@ -16,12 +14,10 @@ class HadethTitleWidget extends StatelessWidget {
         Navigator.pushNamed(context, HadethDetailsScreen.routeName,
             arguments: hadeth);
       },
-      child: Container(
-        alignment: Alignment(0, 0),
-        child: Text(
-          hadeth.title,
-          style: TextStyle(fontSize: 25),
-        ),
+      child: Text(
+        hadeth.title,
+        textAlign: TextAlign.center,
+        style: Theme.of(context).textTheme.bodyText1,
       ),
     );
   }

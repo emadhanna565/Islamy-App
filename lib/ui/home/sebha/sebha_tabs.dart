@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:islamy/const.dart';
+import 'package:islamy/ui/my_theme_data.dart';
 
 class SebhaScreen extends StatefulWidget {
   SebhaScreen({Key? key}) : super(key: key);
@@ -49,11 +50,16 @@ class _SebhaScreenState extends State<SebhaScreen> {
             child: Container(
               margin: EdgeInsets.all(15),
               decoration: BoxDecoration(
-                color: Theme.of(context).primaryColor,
+                color: MyThemeData.themeMode == ThemeMode.light
+                    ? MyThemeData.lightPrimaryColor
+                    : MyThemeData.darkAccentColor,
                 borderRadius: BorderRadius.circular(15),
               ),
               padding: EdgeInsets.symmetric(vertical: 5, horizontal: 20),
-              child: Text('سبحان الله'),
+              child: Text(
+                'سبحان الله',
+                style: Theme.of(context).appBarTheme.titleTextStyle,
+              ),
             ),
           )
         ],
