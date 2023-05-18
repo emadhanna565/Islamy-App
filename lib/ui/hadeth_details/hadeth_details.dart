@@ -1,7 +1,6 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:islamy/ui/home/hadeth/hadeth.dart';
-import 'package:islamy/ui/my_theme_data.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName = 'hadeth_details';
@@ -18,9 +17,7 @@ class HadethDetailsScreen extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          MyThemeData.themeMode == ThemeMode.light
-              ? 'assets/images/background_image.png'
-              : 'assets/images/dark_background_image.png',
+          'assets/images/background_image.png',
         ),
         fit: BoxFit.fill,
       )),
@@ -34,24 +31,17 @@ class HadethDetailsScreen extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 5, bottom: 8),
-              child: Text(
-                arg.title,
-                style: Theme.of(context).textTheme.headline3,
-              ),
+              child: Text(arg.title),
             ),
             Expanded(
               child: Card(
-                color: Theme.of(context).cardTheme.color,
-                margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
-                shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                child: Text(
-                  arg.content,
-                  textAlign: TextAlign.center,
-                  style: Theme.of(context).textTheme.bodyText2,
-                ),
-              ),
+                  margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  child: Container(
+                    child: Text(arg.content),
+                  )),
             ),
           ],
         ),

@@ -84,7 +84,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   }
 
   void readFile(int chapterIndex) async {
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 4));
     String text =
         await rootBundle.loadString('assets/files/${chapterIndex + 1}.txt');
     setState(() {
