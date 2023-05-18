@@ -25,21 +25,19 @@ class _HadethScreenState extends State<HadethScreen> {
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
           //margin: EdgeInsets.only(bottom: 4),
         ),
         Padding(
-          padding: const EdgeInsets.only(top: 8, bottom: 8),
+          padding: const EdgeInsets.only(top: 5, bottom: 5),
           child: Text('Hadeth Number',
-              style: TextStyle(
-                fontSize: 25,
-              ),
+              style: Theme.of(context).textTheme.headline5,
               textAlign: TextAlign.center),
         ),
         Container(
           width: double.infinity,
           height: 2,
-          color: Theme.of(context).primaryColor,
+          color: Theme.of(context).bottomNavigationBarTheme.selectedItemColor,
           //margin: EdgeInsets.only(top: 8),
         ),
         Expanded(
@@ -56,9 +54,11 @@ class _HadethScreenState extends State<HadethScreen> {
                     itemCount: allHadethList.length,
                     separatorBuilder: (context, index) {
                       return Container(
-                        color: Theme.of(context).primaryColor,
                         width: double.infinity,
-                        height: 2,
+                        height: 1.5,
+                        color: Theme.of(context)
+                            .bottomNavigationBarTheme
+                            .selectedItemColor,
                         margin: EdgeInsets.symmetric(horizontal: 10),
                       );
                     },
@@ -84,7 +84,7 @@ class _HadethScreenState extends State<HadethScreen> {
       Hadeth hadeth = Hadeth(title, content);
       hadethList.add(hadeth);
     }
-    //await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 3));
     allHadethList = hadethList;
     setState(() {});
   }

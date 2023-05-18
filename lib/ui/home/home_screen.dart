@@ -5,6 +5,7 @@ import 'package:islamy/ui/home/hadeth/hadeth_tabs.dart';
 import 'package:islamy/ui/home/quran/quran_tabs.dart';
 import 'package:islamy/ui/home/radio/radio_tabs.dart';
 import 'package:islamy/ui/home/sebha/sebha_tabs.dart';
+import 'package:islamy/ui/my_theme_data.dart';
 
 class HomeScreen extends StatefulWidget {
   static const String routeName = 'homeScreen';
@@ -32,7 +33,9 @@ class _HomeScreenState extends State<HomeScreen> {
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          'assets/images/background_image.png',
+          MyThemeData.themeMode == ThemeMode.light
+              ? 'assets/images/background_image.png'
+              : 'assets/images/dark_background_image.png',
         ),
         fit: BoxFit.fill,
       )),
@@ -40,7 +43,7 @@ class _HomeScreenState extends State<HomeScreen> {
         appBar: AppBar(
           title: Text(
             'اسلامي',
-            style: TextStyle(color: Colors.black),
+            style: Theme.of(context).appBarTheme.titleTextStyle,
           ),
         ),
         body: tabs[selectedTabIndex],
