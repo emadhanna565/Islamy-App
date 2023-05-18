@@ -135,26 +135,11 @@ class QuranScreen extends StatelessWidget {
           color: Theme.of(context).primaryColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
-        Row(
-          children: [
-            Expanded(
-                child: Text('اسم السوره',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-            Container(
-              width: 2,
-              color: Theme.of(context).primaryColor,
+        Text('اسم السوره',
+            style: TextStyle(
+              fontSize: 30,
             ),
-            Expanded(
-                child: Text('عدد الايات',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-          ],
-        ),
+            textAlign: TextAlign.center),
         Container(
           width: double.infinity,
           height: 2,
