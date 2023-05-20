@@ -14,13 +14,10 @@ class VerseContent extends StatelessWidget {
         padding: EdgeInsets.only(
           top: 15,
         ),
-        alignment: Alignment.center,
         child: Text(
           content,
           textAlign: TextAlign.center,
-          style: TextStyle(
-            fontSize: 24,
-          ),
+          style: Theme.of(context).textTheme.bodyText2,
         ),
       ),
     );

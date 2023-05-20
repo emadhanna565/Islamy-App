@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:islamy/ui/home/quran/verse_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatelessWidget {
   List<String> names = [
@@ -127,33 +128,17 @@ class QuranScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Center(child: Image.asset('assets/images/quran_header_logo.png')),
+        Expanded(
+            flex: 1, child: Image.asset('assets/images/quran_header_logo.png')),
         Container(
           width: double.infinity,
           height: 2,
           color: Theme.of(context).primaryColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
-        Row(
-          children: [
-            Expanded(
-                child: Text('اسم السوره',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-            Container(
-              width: 2,
-              color: Theme.of(context).primaryColor,
-            ),
-            Expanded(
-                child: Text('عدد الايات',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-          ],
-        ),
+        Text(AppLocalizations.of(context)!.chapter_name,
+            style: Theme.of(context).textTheme.headline5,
+            textAlign: TextAlign.center),
         Container(
           width: double.infinity,
           height: 2,
@@ -161,6 +146,7 @@ class QuranScreen extends StatelessWidget {
           margin: EdgeInsets.only(top: 8),
         ),
         Expanded(
+          flex: 3,
           child: ListView.separated(
             itemBuilder: (context, index) {
               return VerseName(title: names[index], index: index);

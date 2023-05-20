@@ -1,7 +1,9 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:islamy/ui/my_theme_data.dart';
 import 'package:islamy/ui/sura_details/verse_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = 'sura_details';
@@ -29,25 +31,31 @@ class _SuraDetailsState extends State<SuraDetails> {
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          'assets/images/background_image.png',
+          MyThemeData.themeMode == ThemeMode.light
+              ? 'assets/images/background_image.png'
+              : 'assets/images/dark_background_image.png',
         ),
         fit: BoxFit.fill,
       )),
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'اسلامي',
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         body: Column(
           children: [
             Padding(
               padding: const EdgeInsets.only(top: 5, bottom: 8),
-              child: Text(arg.title),
+              child: Text(
+                arg.title,
+                style: Theme.of(context).textTheme.headline3,
+              ),
             ),
             Expanded(
                 child: Card(
               margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+              color: Theme.of(context).cardTheme.color,
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(15),
               ),
@@ -60,7 +68,9 @@ class _SuraDetailsState extends State<SuraDetails> {
                       itemCount: chapterContent.length,
                       separatorBuilder: (context, index) {
                         return Container(
-                          color: Theme.of(context).primaryColor,
+                          color: Theme.of(context)
+                              .bottomNavigationBarTheme
+                              .selectedItemColor,
                           height: 1,
                           width: double.infinity,
                           margin: EdgeInsets.symmetric(horizontal: 45),
@@ -75,7 +85,7 @@ class _SuraDetailsState extends State<SuraDetails> {
   }
 
   void readFile(int chapterIndex) async {
-    await Future.delayed(Duration(seconds: 5));
+    await Future.delayed(Duration(seconds: 4));
     String text =
         await rootBundle.loadString('assets/files/${chapterIndex + 1}.txt');
     setState(() {
