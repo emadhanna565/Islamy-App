@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/ui/home/hadeth/hadeth.dart';
 import 'package:islamy/ui/home/hadeth/hadeth_title.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class HadethScreen extends StatefulWidget {
   @override
@@ -30,7 +31,7 @@ class _HadethScreenState extends State<HadethScreen> {
         ),
         Padding(
           padding: const EdgeInsets.only(top: 5, bottom: 5),
-          child: Text('Hadeth Number',
+          child: Text(AppLocalizations.of(context)!.hadeth_number,
               style: Theme.of(context).textTheme.headline5,
               textAlign: TextAlign.center),
         ),

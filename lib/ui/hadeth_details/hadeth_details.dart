@@ -1,6 +1,7 @@
 // ignore_for_file: prefer_const_constructors_in_immutables, prefer_const_constructors
 import 'package:flutter/material.dart';
 import 'package:islamy/ui/home/hadeth/hadeth.dart';
+import 'package:islamy/ui/my_theme_data.dart';
 
 class HadethDetailsScreen extends StatelessWidget {
   static const String routeName = 'hadeth_details';
@@ -17,7 +18,9 @@ class HadethDetailsScreen extends StatelessWidget {
       decoration: BoxDecoration(
           image: DecorationImage(
         image: AssetImage(
-          'assets/images/background_image.png',
+          MyThemeData.themeMode == ThemeMode.light
+              ? 'assets/images/background_image.png'
+              : 'assets/images/dark_background_image.png',
         ),
         fit: BoxFit.fill,
       )),
@@ -35,13 +38,11 @@ class HadethDetailsScreen extends StatelessWidget {
             ),
             Expanded(
               child: Card(
-                  margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(15),
-                  ),
-                  child: Container(
-                    child: Text(arg.content),
-                  )),
+                margin: EdgeInsets.symmetric(vertical: 48, horizontal: 12),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(15),
+                ),
+                child: Text(arg.content, textAlign: TextAlign.center,),),
             ),
           ],
         ),

@@ -29,17 +29,18 @@ class MyThemeData {
         ),
         headline5: TextStyle(
           fontSize: 24,
-          color: lightMainTextColor,
-        ),
-        bodyText1: TextStyle(
-          // sub header
-          fontSize: 24,
-          color: lightMainTextColor,
-        ),
-        bodyText2: TextStyle(
-          fontSize: 20,
-          color: lightMainTextColor,
-        )),
+        color: lightMainTextColor,
+      ),
+      bodyText1: TextStyle(
+        // sub header
+        fontSize: 24,
+        color: lightMainTextColor,
+      ),
+      bodyText2: TextStyle(
+        fontSize: 20,
+        color: lightMainTextColor,
+      ),
+    ),
     bottomNavigationBarTheme: const BottomNavigationBarThemeData(
       selectedItemColor: Colors.black,
       unselectedItemColor: Colors.white,
@@ -84,5 +85,5 @@ class MyThemeData {
       cardTheme: const CardTheme(
         color: darkPrimaryColor,
       ));
-  static ThemeMode themeMode = ThemeMode.light;
+  static ThemeMode themeMode = ThemeMode.dark;
 }

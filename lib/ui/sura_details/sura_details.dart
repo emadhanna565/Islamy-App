@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:islamy/ui/my_theme_data.dart';
 import 'package:islamy/ui/sura_details/verse_content.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class SuraDetails extends StatefulWidget {
   static const String routeName = 'sura_details';
@@ -39,7 +40,7 @@ class _SuraDetailsState extends State<SuraDetails> {
       child: Scaffold(
         appBar: AppBar(
           title: Text(
-            'اسلامي',
+            AppLocalizations.of(context)!.app_title,
           ),
         ),
         body: Column(

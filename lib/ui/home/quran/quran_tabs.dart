@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:islamy/ui/home/quran/verse_name.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class QuranScreen extends StatelessWidget {
   List<String> names = [
@@ -135,26 +136,9 @@ class QuranScreen extends StatelessWidget {
           color: Theme.of(context).primaryColor,
           margin: EdgeInsets.only(bottom: 4),
         ),
-        Row(
-          children: [
-            Expanded(
-                child: Text('اسم السوره',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-            Container(
-              width: 2,
-              color: Theme.of(context).primaryColor,
-            ),
-            Expanded(
-                child: Text('عدد الايات',
-                    style: TextStyle(
-                      fontSize: 25,
-                    ),
-                    textAlign: TextAlign.center)),
-          ],
-        ),
+        Text(AppLocalizations.of(context)!.chapter_name,
+            style: Theme.of(context).textTheme.headline5,
+            textAlign: TextAlign.center),
         Container(
           width: double.infinity,
           height: 2,
